@@ -251,46 +251,46 @@ export default function Dashboard() {
           }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 pt-10 pb-6">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="bg-blue-500 p-2.5 rounded-xl">
-              <Tv className="w-7 h-7 text-white" />
+        <div className="relative max-w-7xl mx-auto px-4 pt-8 sm:pt-10 pb-4 sm:pb-6">
+          <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+            <div className="bg-blue-500 p-2 sm:p-2.5 rounded-xl">
+              <Tv className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+            <h1 className="text-2xl sm:text-5xl font-black tracking-tight text-white">
               TV Binge-Watch Dashboard
             </h1>
           </div>
-          <p className="text-lg text-gray-400 max-w-2xl mb-6">
+          <p className="text-sm sm:text-lg text-gray-400 max-w-2xl mb-4 sm:mb-6">
             50 iconic shows. 15,814 episodes. 8,361 hours.
             How long would it really take to watch them all?
           </p>
 
           {/* Hero stats row */}
-          <div className="grid grid-cols-3 gap-4 mb-8 max-w-xl">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-xl">
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-black text-white">50</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Shows</div>
+              <div className="text-2xl sm:text-4xl font-black text-white">50</div>
+              <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider mt-1">Shows</div>
             </div>
             <div className="text-center border-x border-gray-800">
-              <div className="text-3xl sm:text-4xl font-black text-amber-400">8,361</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Hours</div>
+              <div className="text-2xl sm:text-4xl font-black text-amber-400">8,361</div>
+              <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider mt-1">Hours</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl sm:text-4xl font-black text-white">348</div>
-              <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Days Nonstop</div>
+              <div className="text-2xl sm:text-4xl font-black text-white">348</div>
+              <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider mt-1">Days Nonstop</div>
             </div>
           </div>
         </div>
 
         {/* Scrolling show cards marquee - Row 1 */}
-        <div className="relative mb-2">
+        <div className="relative mb-2 overflow-hidden">
           <div className="flex gap-3 animate-marquee hover:[animation-play-state:paused]">
             {[...SHOW_CARDS, ...SHOW_CARDS].map((card, i) => (
               <div
                 key={`r1-${i}`}
                 onMouseEnter={() => setHoveredShow(card.name)}
                 onMouseLeave={() => setHoveredShow(null)}
-                className={`flex-shrink-0 w-40 h-24 rounded-xl bg-gradient-to-br ${card.gradient} p-3 flex flex-col justify-between cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 w-32 sm:w-40 h-20 sm:h-24 rounded-xl bg-gradient-to-br ${card.gradient} p-3 flex flex-col justify-between cursor-pointer transition-all duration-300 ${
                   hoveredShow === card.name ? "scale-110 shadow-2xl shadow-white/20 z-10" : "hover:scale-105"
                 }`}
               >
@@ -305,14 +305,14 @@ export default function Dashboard() {
         </div>
 
         {/* Scrolling show cards marquee - Row 2 (reverse) */}
-        <div className="relative pb-8">
+        <div className="relative pb-6 sm:pb-8 overflow-hidden">
           <div className="flex gap-3 animate-marquee-reverse hover:[animation-play-state:paused]">
             {[...SHOW_CARDS.slice(10), ...SHOW_CARDS.slice(0, 10), ...SHOW_CARDS.slice(10), ...SHOW_CARDS.slice(0, 10)].map((card, i) => (
               <div
                 key={`r2-${i}`}
                 onMouseEnter={() => setHoveredShow(card.name)}
                 onMouseLeave={() => setHoveredShow(null)}
-                className={`flex-shrink-0 w-40 h-24 rounded-xl bg-gradient-to-br ${card.gradient} p-3 flex flex-col justify-between cursor-pointer transition-all duration-300 ${
+                className={`flex-shrink-0 w-32 sm:w-40 h-20 sm:h-24 rounded-xl bg-gradient-to-br ${card.gradient} p-3 flex flex-col justify-between cursor-pointer transition-all duration-300 ${
                   hoveredShow === card.name ? "scale-110 shadow-2xl shadow-white/20 z-10" : "hover:scale-105"
                 }`}
               >
@@ -384,7 +384,7 @@ export default function Dashboard() {
         </div>
 
         {/* ===== "INSTEAD OF BINGE-WATCHING" SECTION ===== */}
-        <div className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-2xl p-6 text-white">
+        <div className="bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-2xl p-4 sm:p-6 text-white">
           <div className="flex items-center gap-2 mb-2">
             <Zap className="w-5 h-5 text-amber-400" />
             <h2 className="text-lg font-bold">Instead of Watching All 50 Shows, You Could...</h2>
@@ -405,7 +405,7 @@ export default function Dashboard() {
         </div>
 
         {/* Binge Calculator */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-6">
           <div className="flex items-center gap-2 mb-4">
             <Timer className="w-5 h-5 text-gray-700" />
             <h2 className="text-lg font-bold text-gray-900">The Binge Calculator</h2>
@@ -436,19 +436,19 @@ export default function Dashboard() {
         {/* Charts Row */}
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Top Shows by Hours */}
-          <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-5">
-            <h2 className="text-lg font-bold text-gray-900 mb-1">
+          <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
               Top 15 Shows by Binge Time
             </h2>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-xs sm:text-sm text-gray-500 mb-4">
               Hours needed to watch every episode. Pokémon and Detective Conan are in a league of their own.
             </p>
-            <div className="h-[480px]">
+            <div className="h-[380px] sm:h-[480px]">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={topByHours} layout="vertical" margin={{ left: 10, right: 20 }}>
+                <BarChart data={topByHours} layout="vertical" margin={{ left: 0, right: 10 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis type="number" tick={{ fontSize: 12, fill: "#666" }} />
-                  <YAxis type="category" dataKey="name" width={160} tick={{ fontSize: 12, fill: "#333" }} />
+                  <XAxis type="number" tick={{ fontSize: 11, fill: "#666" }} />
+                  <YAxis type="category" dataKey="name" width={110} tick={{ fontSize: 10, fill: "#333" }} />
                   <Tooltip
                     formatter={(value) => [`${value} hrs`, "Binge Time"]}
                     contentStyle={{ borderRadius: "8px", border: "1px solid #e5e7eb", fontSize: 13 }}
@@ -464,10 +464,10 @@ export default function Dashboard() {
           </div>
 
           {/* Hours by Type Pie + Stats */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-5">
-            <h2 className="text-lg font-bold text-gray-900 mb-1">Hours by Genre</h2>
-            <p className="text-sm text-gray-500 mb-4">Total binge time broken down by show type.</p>
-            <div className="h-[280px]">
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Hours by Genre</h2>
+            <p className="text-xs sm:text-sm text-gray-500 mb-4">Total binge time broken down by show type.</p>
+            <div className="h-[240px] sm:h-[280px]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
@@ -476,8 +476,8 @@ export default function Dashboard() {
                     nameKey="name"
                     cx="50%"
                     cy="50%"
-                    outerRadius={100}
-                    innerRadius={50}
+                    outerRadius={80}
+                    innerRadius={40}
                     strokeWidth={2}
                     stroke="#fff"
                     label={({ value }) => `${value}h`}
@@ -517,10 +517,10 @@ export default function Dashboard() {
         {/* Decade Breakdown + Most Streamed */}
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Decade Breakdown */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-5">
-            <h2 className="text-lg font-bold text-gray-900 mb-1">Shows by Decade Started</h2>
-            <p className="text-sm text-gray-500 mb-4">The 2000s were the golden age of new long-running shows.</p>
-            <div className="h-[300px]">
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Shows by Decade Started</h2>
+            <p className="text-xs sm:text-sm text-gray-500 mb-4">The 2000s were the golden age of new long-running shows.</p>
+            <div className="h-[260px] sm:h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={decadeData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -537,9 +537,9 @@ export default function Dashboard() {
           </div>
 
           {/* Most Streamed in 2024 */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-5">
-            <h2 className="text-lg font-bold text-gray-900 mb-1">Most-Streamed in 2024</h2>
-            <p className="text-sm text-gray-500 mb-4">Nielsen data: these shows from our list dominated streaming last year.</p>
+          <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Most-Streamed in 2024</h2>
+            <p className="text-xs sm:text-sm text-gray-500 mb-4">Nielsen data: these shows from our list dominated streaming last year.</p>
             <div className="space-y-2.5">
               {[
                 { rank: 1, name: "Grey's Anatomy", mins: "47.9B min", bar: 100 },
@@ -572,12 +572,12 @@ export default function Dashboard() {
         </div>
 
         {/* Scatter: Episodes vs Hours */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-5">
-          <h2 className="text-lg font-bold text-gray-900 mb-1">Episodes vs Binge Time</h2>
-          <p className="text-sm text-gray-500 mb-4">
+        <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
+          <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Episodes vs Binge Time</h2>
+          <p className="text-xs sm:text-sm text-gray-500 mb-4">
             Shows with longer episodes (Live Action dramas) rack up hours faster per episode. Bubble size = years on air.
           </p>
-          <div className="h-[400px]">
+          <div className="h-[300px] sm:h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
               <ScatterChart margin={{ bottom: 10, left: 10, right: 20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -606,9 +606,9 @@ export default function Dashboard() {
         </div>
 
         {/* Timeline */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-5">
-          <h2 className="text-lg font-bold text-gray-900 mb-1">Show Timelines</h2>
-          <p className="text-sm text-gray-500 mb-4">When each show started and how long it ran. Some have been on air for over three decades.</p>
+        <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
+          <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-1">Show Timelines</h2>
+          <p className="text-xs sm:text-sm text-gray-500 mb-4">When each show started and how long it ran. Some have been on air for over three decades.</p>
           <div className="space-y-1.5 max-h-[600px] overflow-y-auto">
             {[...filteredData]
               .sort((a, b) => a.startYear - b.startYear)
@@ -621,7 +621,7 @@ export default function Dashboard() {
                 const width = ((endYr - show.startYear) / range) * 100;
                 return (
                   <div key={show.show} className="flex items-center gap-2">
-                    <div className="w-44 sm:w-52 text-xs text-gray-700 font-medium truncate flex-shrink-0 text-right pr-2">{show.show}</div>
+                    <div className="w-28 sm:w-52 text-[10px] sm:text-xs text-gray-700 font-medium truncate flex-shrink-0 text-right pr-1 sm:pr-2">{show.show}</div>
                     <div className="flex-1 h-5 bg-gray-100 rounded relative">
                       <div
                         className="absolute h-full rounded"
@@ -639,7 +639,7 @@ export default function Dashboard() {
                 );
               })}
             <div className="flex items-center gap-2 mt-2">
-              <div className="w-44 sm:w-52 flex-shrink-0" />
+              <div className="w-28 sm:w-52 flex-shrink-0" />
               <div className="flex-1 flex justify-between text-[10px] text-gray-400 px-1">
                 <span>1986</span><span>1996</span><span>2006</span><span>2016</span><span>2026</span>
               </div>
@@ -649,14 +649,14 @@ export default function Dashboard() {
         </div>
 
         {/* Data Table */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-5">
+        <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-5">
           <div className="flex items-center gap-2 mb-1">
             <Film className="w-5 h-5 text-gray-600" />
-            <h2 className="text-lg font-bold text-gray-900">All Shows</h2>
+            <h2 className="text-base sm:text-lg font-bold text-gray-900">All Shows</h2>
           </div>
-          <p className="text-sm text-gray-500 mb-4">Click column headers to sort. Showing {filteredData.length} shows.</p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <p className="text-xs sm:text-sm text-gray-500 mb-4">Click column headers to sort. Showing {filteredData.length} shows.</p>
+          <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+            <table className="w-full text-xs sm:text-sm min-w-[640px]">
               <thead>
                 <tr className="border-b border-gray-200 text-left">
                   {[
@@ -704,7 +704,7 @@ export default function Dashboard() {
         </div>
 
         {/* Fun Facts — expanded */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <FunFact icon={<TrendingUp className="w-5 h-5 text-rose-500" />} title="Naruto Universe" text="Watching Naruto + Shippuden + Boruto is 387 hours — over 16 straight days of ninjas." />
           <FunFact icon={<Clock className="w-5 h-5 text-blue-500" />} title="Law & Order Universe" text="The original + SVU total 754 hours. That's a full month of 24/7 crime-solving." />
           <FunFact icon={<Tv className="w-5 h-5 text-amber-500" />} title="Dragon Ball Saga" text="DB + DBZ + DBS = 575 episodes and 230 hours. Most of it is powering up." />
